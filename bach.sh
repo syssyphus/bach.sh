@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # ./bach.sh  | aplay -r44100
 SAMPLE_RATE=44100
 
