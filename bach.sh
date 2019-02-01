@@ -19,26 +19,25 @@ note() {
     FREQ=$1
     DURATION=${2:-4}
 
-    if [ "$FREQ" != "P" ]; then
-        LEN=$((SAMPLE_RATE / FREQ))
-        PW=$((LEN / 2))
+    LEN=$((SAMPLE_RATE / FREQ))
+    PW=$((LEN / ((N % 8) + 2)))
+    N=$((N + 1))
 
-        MIN=$(printf '\x01')
-        MAX=$(printf '\xFF')
-        WAVEFORM=""
+    MIN=$(printf '\x01')
+    MAX=$(printf '\xFF')
+    WAVEFORM=""
 
-        for i in $(seq $PW); do
-            WAVEFORM="$MIN$WAVEFORM"
-        done
+    for i in $(seq $PW); do
+        WAVEFORM="$MIN$WAVEFORM"
+    done
 
-        for i in $(seq $PW); do
-            WAVEFORM="$MAX$WAVEFORM"
-        done
+    for i in $(seq $((LEN - PW))); do
+        WAVEFORM="$MAX$WAVEFORM"
+    done
 
-        for i in $(seq $((SAMPLE_RATE / (DURATION * LEN)))); do
-            printf "$WAVEFORM"
-        done
-    fi
+    for i in $(seq $((SAMPLE_RATE / (DURATION * LEN)))); do
+        printf "$WAVEFORM"
+    done
 }
 
 arp() {
