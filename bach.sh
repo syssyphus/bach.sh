@@ -20,14 +20,7 @@ note() {
     FREQ=$1
     DURATION=${2:-4}
 
-    LEN=$(((SAMPLE_RATE * MUL * MUL) / FREQ))
-    ROUND_ERROR=$((LEN % MUL))
-    LEN=$((LEN / MUL))
-
-    if (( ROUND_ERROR > (MUL / 2) )); then
-        LEN=$((LEN + 1))
-    fi
-
+    LEN=$(((SAMPLE_RATE * MUL + (FREQ / 2)) / FREQ))
     PW=$((LEN / ((N % 8) + 2)))
     N=$((N + 1))
 
