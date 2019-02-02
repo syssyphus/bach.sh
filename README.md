@@ -20,15 +20,15 @@ Compression
 ---
 Surprisingly, bzip2 compresses its output to a size even smaller than the original .sh file. And if you turn off PWM in the code (comment line 24), you'll get this 12-line base64-encoded archive:
 
-    QlpoOTFBWSZTWS3c6aQDR/J/86AAAk89QQTImMBmCEEGABgQIAgAAwBAAgAMACjQBH4eiIqgAAGN
-    NBoAZNAZGmhiaMMaaDQAyaAyNNDE0YY00GgBk0BkaaGJowTVKoAGgDQAAAMFKUIBAKemp6QZ6kxM
-    maTAqWgQtqiFvClXGSiXMpDoqJLsKlTtBUu5SoHgEh4qhU8glF5io9FJSesgoewT+QlT+kqV3gkv
-    CpPKkCvQiL1pRfRUfUCPsCn3Jf8FL8qnsk+wTrJEgH6CpYFSwIWVKIyohYFKsqiGJFJiRSZRKskE
-    MhSTKELKELKqEyqhMiFVZFRSyCBioVMCUWCBWCoxSUmKIpkkqGSChgSphIDCEZVSTKqSZUmUJSyk
-    CsIixIRiUWKjFRgEYCVhFMpMqiZBGVFkhiUSAfM/wpS+h8ygsj6KoLYoT4HUaChNklK+J13NLMzf
-    roNiUpsfUSHAIGkYgYf6xplpjM0QkN4qtNzHyZY1FKOASl8nY+7o5tGMcahSsdrGzeO0yeDLGe25
-    0xscSC5ClNV2tjUpTtFJtNZjD8GWM0xoxpqSCcqAWr4vFodMPE36DcwY3yJLQ/BKOIkDR1djou5q
-    5tzq2vyat7GOfIQnzCbAUG5xYcowyyzPL3Z57tObe72OE0y0aaG2/h3cDw48wGoqU4jd7uLVadPZ
-    3O1KhuHe6BCbnxdX7tZ3nNo4O9xUvNRbOYFRzcXyPe1NTU5Hq9W43HZ683i09/FyY3KVHVt6bdjo
-    +Dbl1eW7mScAi3du9yY07vcUauMoGzRNnFtQ3ySeb9MeDM3+CLy8uaqLHp56cNeBtrpORThr+wmO
-    dI7OXDZ/4u5IpwoSBbudNIA=
+    QlpoOTFBWSZTWSe4z6cDRel/86AAAk81YQbIiIFjGEEGABgQMBAABgBgAgAYAGjQBH4AAAAADGQy
+    Gg0GjQBoAGhhjIZDQaDRoA0ADQwxkMhoNBo0AaABoYYyGQ0Gg0aANAA0MClKEBGiZMpiA8mk9IZN
+    MmBUtAhbVELeFKuMlEuREOaokushU6AqXbSIHcEh3qhU9oSi8CUeKkpPuE+EgofoKlP2IR+9VJP4
+    EvMlVHpSlPklF6lHzAj+wU+iL6hS+yp90nqE8iSQB+AqWBUsCFlSiMqIWBSrApVklEsikqwiGKiS
+    xEKMIkWUkVMpEDAkMVSqsVCpgSiwJRYSjCUYpKTFJSYEySVDJBQwVKYKlMIRlCVZVSTBLCpEwlVG
+    UpTJKhiirChMBKwFMRYhViqVipiTEmBMIlAHofEpS+R6FBZHyVQWxQn7nkNBQmySlep67mlmZv10
+    GxKU2PQEOAQNIxAw+bGmWmMzRCQ3kq03MebLGpCjgEpebreTqc2jGOIJKx0Y2bx0Mn9MsZ9tzqxs
+    cQFyFKaro2NSlOgpNprMYf4ZYzTGjGmpIJyoBavo7mh1Ydxv0G5gxvkSWh/IUcRIGjzdbqXY1c25
+    5tr6mrexjnyEJ6hNgKDc4sOUYZZZnf454btObe7WOE0y0aaG2/h2cD2ceYDUEpxG7x4tVp1f67HR
+    KhuHa6ghNzyfZ7ms7Tm0cHa4qXgotnMCo5uL0Pg1NTU5Hve9uNx1+/m7mnw4uTG5So/5t+W3W6n4
+    bcvi793Mk4BFu6b3JjTs8UjVxlA2aJs4tqG+STyfhj2Mzf7Au/v5qose7w04a8DbXScinDX2iY50
+    jr5cNn/i7kinChIE9xn04A==
