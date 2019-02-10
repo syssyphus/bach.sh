@@ -1,5 +1,6 @@
 #!/bin/bash
-# ./bach.sh  | aplay -r44100
+# To listen to this composition, use
+# $ ./bwv846-prelude.sh | aplay
 SAMPLE_RATE=44100
 MUL=100
 
