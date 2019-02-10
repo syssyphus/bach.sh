@@ -54,6 +54,10 @@ arp() {
     done
 }
 
+printf "RIFF\0\0\0\0WAVEfmt\x20\x10"
+printf "\0\0\0\x01\0\x01\0\x44\xac"
+printf "\0\0\x44\xac\0\0\x01\0\x08\0datai\xff\xff\xff"
+
 arp ${C[2]} ${E[2]} ${G[2]} ${C[3]} ${E[3]}
 arp ${C[2]} ${D[2]} ${A[3]} ${D[3]} ${F[3]}
 arp ${B[2]} ${D[2]} ${G[2]} ${D[3]} ${F[3]}
