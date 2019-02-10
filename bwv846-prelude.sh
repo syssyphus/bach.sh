@@ -21,33 +21,49 @@ note() {
     FREQ=$1
     DURATION=${2:-4}
 
+    MIN=$(printf '\x01')
+    MAX=$(printf '\xFF')
+
+    OUT=""
+
+    if [[ $FREQ == 0 ]]; then
+        LEN=$((SAMPLE_RATE / DURATION))
+
+        for (( i = 0; i < LEN; i++ )); do
+            OUT+="$MIN"
+        done
+
+        printf "$OUT"
+        return
+    fi
+
     LEN=$(((SAMPLE_RATE * MUL + (FREQ / 2)) / FREQ))
     PW=$((LEN / ((N % 8) + 2)))
     N=$((N + 1))
 
-    MIN=$(printf '\x01')
-    MAX=$(printf '\xFF')
     WAVEFORM=""
 
-    for i in $(seq $PW); do
-        WAVEFORM="$MIN$WAVEFORM"
+    for (( i = 0; i < $PW; i ++ )); do
+        WAVEFORM+="$MIN"
     done
 
-    for i in $(seq $((LEN - PW))); do
-        WAVEFORM="$MAX$WAVEFORM"
+    for (( i = 0; i < LEN - PW; i++ )); do
+        WAVEFORM+="$MAX"
     done
 
-    for i in $(seq $((SAMPLE_RATE / (DURATION * LEN)))); do
-        printf "$WAVEFORM"
+    for (( i = 0; i < SAMPLE_RATE / (DURATION * LEN); i++ )); do
+        OUT+="$WAVEFORM"
     done
+
+    printf "$OUT"
 }
 
 arp() {
-    for i in $(seq 2); do
+    for i in 1 2; do
         note $1
         note $2
         
-        for j in $(seq 2); do
+        for j in 1 2; do
             note $3
             note $4
             note $5
@@ -57,7 +73,8 @@ arp() {
 
 printf "RIFF\0\0\0\0WAVEfmt\x20\x10"
 printf "\0\0\0\x01\0\x01\0\x44\xac"
-printf "\0\0\x44\xac\0\0\x01\0\x08\0datai\xff\xff\xff"
+printf "\0\0\x44\xac\0\0\x01\0\x08\0"
+printf "datai\xff\xff\xff"
 
 arp ${C[2]} ${E[2]} ${G[2]} ${C[3]} ${E[3]}
 arp ${C[2]} ${D[2]} ${A[3]} ${D[3]} ${F[3]}
