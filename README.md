@@ -10,7 +10,7 @@ Or
 
 `./bwv846-prelude.sh | mpv -`
 
-If noting works, you can just save output to a wav file and play it with any player:
+If nothing works, you can just save output to a wav file and play it with any player:
 
 `./bach.sh > prelude.wav`
 
