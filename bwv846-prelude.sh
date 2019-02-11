@@ -22,7 +22,7 @@ note() {
     DURATION=${2:-4}
 
     MIN=$(printf '\x01')
-    MAX=$(printf '\xFF')
+    MAX=$(printf '\xFE')
 
     OUT=""
 
